@@ -1,4 +1,4 @@
-const { Extra, Markup } = require('telegraf');
+const { Markup } = require('telegraf');
 const denyCallback = async (ctx) => {
     if (!ctx.match || !ctx.callbackQuery) return;
 

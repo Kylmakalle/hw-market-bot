@@ -19,7 +19,7 @@ const soldCallback = async (ctx) => {
             PUBLICATION_CHANNEL_ID,
             publishedMessageId,
             undefined,
-            `<b>Продано</b>\n<s>${message.reply_to_message.text}</s>`,
+            `<b>Продано</b>\n<s>${message.reply_to_message.caption || message.reply_to_message.text}</s>`,
             Extra.HTML(),
         );
     } else {

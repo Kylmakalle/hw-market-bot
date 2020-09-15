@@ -1,6 +1,5 @@
-const { Markup, Extra } = require('telegraf');
-const User = require('../models/User');
-import { fetchPhoto } from './PhotoFetcher'
+import { Markup, Extra } from 'telegraf';
+import { User } from '../models/User';
 
 const { MODERATION_CHAT_ID } = process.env;
 
@@ -32,18 +31,18 @@ const handleMessage = async (ctx) => {
         const { from, message_id, caption, text, photo } = ctx.message;
         const actualText = caption || text;
         const user = new User(from);
-        const fetchedPhoto = photo ? await fetchPhoto(photo[0].file_id) : undefined;
+        const photoId = photo ? photo[0].file_id : undefined;
         const formattedMessage = `\nОт: ${user.getMentionByFullNameHtml()}\nЛот:\n\n${actualText}`;
         // no title for now
         // const title = actualText.split('\n')[0].slice(0, 15)
 
         let response;
-        if (photo && fetchedPhoto) {
+        if (photoId) {
             const extraParams = {
                 caption: formattedMessage,
                 parse_mode: 'HTML'
             }
-            response = await ctx.telegram.sendPhoto(MODERATION_CHAT_ID, fetchedPhoto, extraParams)
+            response = await ctx.telegram.sendPhoto(MODERATION_CHAT_ID, photoId, extraParams)
         } else {
             response = await ctx.telegram.sendMessage(
                 MODERATION_CHAT_ID,

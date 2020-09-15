@@ -1,25 +1,19 @@
 {
-  "name": "hw-market",
-  "version": "1.0.0",
-  "description": "2ch /hw/ marketplace bot",
-  "main": "src/server.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "build": "./node_modules/.bin/babel src --out-dir build --presets=@babel/preset-env",
-    "clear": "rm -rf build/",
-    "start": "node build/server.js"
-  },
-  "author": "Tatiana M.",
-  "license": "MIT",
-  "dependencies": {
-    "dotenv": "^8.2.0",
-    "telegraf": "^3.38.0",
-    "telegraf-i18n": "^6.6.0"
-  },
-  "devDependencies": {
-    "@babel/cli": "^7.11.6",
-    "@babel/core": "^7.11.6",
-    "@babel/node": "^7.10.5",
-    "@babel/preset-env": "^7.11.5"
-  }
+    "name": "hw-market",
+    "version": "1.0.0",
+    "description": "2ch /hw/ marketplace bot",
+    "main": "src/index.js",
+    "scripts": {
+        "test": "echo \"Error: no test specified\" && exit 1",
+	"build": "npx babel src --out-dir build --presets=@babel/preset-env",
+	"clear": "rm -rf build/",
+        "start": "node src/index.js"
+    },
+    "author": "Tatiana M.",
+    "license": "MIT",
+    "dependencies": {
+        "dotenv": "^8.2.0",
+        "telegraf": "^3.38.0",
+        "telegraf-i18n": "^6.6.0"
+    }
 }

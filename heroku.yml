@@ -1,5 +1,5 @@
 build:
     docker:
-      bot: Dockerfile
+      worker: Dockerfile
   run:
-    bot: npm start
+    worker: npm start

@@ -14,7 +14,7 @@ FROM node:12-alpine
 ENV NODE_WORKDIR /app
 WORKDIR $NODE_WORKDIR
 
-COPY --from=builder $NODE_WORKDIR/dist ./dist
+COPY --from=builder $NODE_WORKDIR/build ./dist
 COPY package* ./
 RUN npm install --production
 

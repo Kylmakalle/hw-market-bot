@@ -7,7 +7,8 @@
         "test": "echo \"Error: no test specified\" && exit 1",
 	"build": "npx babel src --out-dir build --presets=@babel/preset-env",
 	"clear": "rm -rf build/",
-        "start": "node src/index.js"
+    "start": "node src/index.js",
+    "docker-start": "node dist/index.js"
     },
     "author": "Tatiana M.",
     "license": "MIT",

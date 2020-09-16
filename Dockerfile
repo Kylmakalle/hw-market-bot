@@ -17,5 +17,3 @@ WORKDIR $NODE_WORKDIR
 COPY --from=builder $NODE_WORKDIR/build ./dist
 COPY package* ./
 RUN npm install --production
-
-CMD npm start

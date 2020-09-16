@@ -2,4 +2,4 @@ build:
     docker:
       bot: Dockerfile
 run:
-    bot: npm docker-start
+    bot: npm run docker-start

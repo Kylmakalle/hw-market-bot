@@ -12,8 +12,15 @@
     "author": "Tatiana M.",
     "license": "MIT",
     "dependencies": {
+        "babel-polyfill": "^6.26.0",
         "dotenv": "^8.2.0",
         "telegraf": "^3.38.0",
         "telegraf-i18n": "^6.6.0"
+    },
+    "devDependencies": {
+        "@babel/cli": "^7.11.6",
+        "@babel/core": "^7.11.6",
+        "@babel/node": "^7.10.5",
+        "@babel/preset-env": "^7.11.5"
     }
 }

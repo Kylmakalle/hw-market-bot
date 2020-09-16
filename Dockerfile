@@ -7,8 +7,8 @@ ADD . $NODE_WORKDIR
 
 RUN rm -rf dist
 RUN npm install
-RUN npm run build
 RUN npm uninstall babel && npm install --save-dev babel-cli
+RUN npm run build
 
 FROM node:12-alpine
 
